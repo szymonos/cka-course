@@ -34,7 +34,7 @@ When a service account is created in Kubernetes, a secret token is also created.
 
 By default, every Kubernetes namespace has a `default` service account. Every pod in that namespace is automatically assigned this `default` service account unless otherwise specified. If you want to use a different service account for a specific pod, you can specify it in the pod specification.
 
-here’s an example of how you can specify a service account for a pod in the pod specification:
+here's an example of how you can specify a service account for a pod in the pod specification:
 
 ```yaml
 apiVersion: v1

@@ -92,7 +92,7 @@ kubectl edit netpol -n cyan-ns-cka28-trb cyan-np-cka28-trb
 ```
 
 1. The reason nothing can connect at the start is that the ingress port 8080 in the netpol is wrong. It should be 80. Why? We are told in the question that the nginx app in the pod to which the policy applies is listening on the default port `80`. Therefore the *ingress* port needs to be `80` and not `8080`. Fix this.
-1. Now that’s fixed, everything in default namespace now has access to the pod on port 80, and curl will return the nginx default message. Thus we need to add to the rule a podSelector to ensure the incoming traffic can only come from the nominated pod in the default namespace, so it’s an AND rule.
+1. Now that's fixed, everything in default namespace now has access to the pod on port 80, and curl will return the nginx default message. Thus we need to add to the rule a podSelector to ensure the incoming traffic can only come from the nominated pod in the default namespace, so it's an AND rule.
 
 The finished product is this. Again I have omitted the additional metadata but you can leave it in. Save and exit `vi` so the changes are applied.
 
